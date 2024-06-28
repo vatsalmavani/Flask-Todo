@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <h2>Your To-Do List</h2>
+    <form method="POST" action="{{ url_for('dashboard') }}">
+        {{ form.hidden_tag() }}
+        {{ form.description.label }} {{ form.description }}<br>
+        {{ form.submit }}
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{ todo.description }}
+            <form method="POST" action="{{ url_for('delete_todo', todo_id=todo.id) }}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>Delete Account</h2>
+    <form method="POST" action="{{ url_for('delete_account') }}">
+        {{ delete_form.hidden_tag() }}
+        {{ delete_form.submit }}
+    </form>
+</body>
+</html>
