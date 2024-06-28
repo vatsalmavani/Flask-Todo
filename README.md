@@ -16,8 +16,8 @@ This is a simple to-do list application built using Python's Flask framework. Th
 
 Clone the repository:
 ```bash
-git clone https://github.com/vatsalmavani/todo.git
-cd todo
+git clone https://github.com/vatsalmavani/Flask-Todo.git
+cd Flask-Todo
 ```
 
 Create and activate a virtual environment:
